@@ -90,3 +90,9 @@ TW_MAX_BRIGHTNESS := 4095
 TW_NO_USB_STORAGE := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
+TW_FORCE_USE_BUSYBOX := true
+TW_HAS_EDL_MODE := true
+
+TW_SKIP_COMPATIBILITY_CHECK := true
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
