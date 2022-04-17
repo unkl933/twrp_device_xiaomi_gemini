@@ -92,8 +92,8 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_INPUT_BLACKLIST := "hbtp_vm"
-# TW_USE_TOOLBOX := true
-# TW_INCLUDE_FB2PNG := true
+TW_USE_TOOLBOX := true
+TW_INCLUDE_FB2PNG := true
 # TWRP specific build flags
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
