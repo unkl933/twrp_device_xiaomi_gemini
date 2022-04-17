@@ -1,0 +1,4 @@
+#
+ro.product.device=gemini
+ro.build.product=gemini
+#

@@ -18,9 +18,6 @@
 
 DEVICE_PATH := device/xiaomi/gemini
 
-# For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
-# TARGET_USES_INTERACTION_BOOST := true
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -110,12 +107,22 @@ TW_THEME := portrait_hdpi
 TW_EXCLUDE_TWRPAPP := true
 TW_HAS_EDL_MODE := true
 TW_SKIP_COMPATIBILITY_CHECK := true
-PB_DISABLE_DEFAULT_DM_VERITY := true
-PB_TORCH_PATH := "/sys/class/leds/led:torch_0"
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery.fstab
+BOARD_SUPPRESS_SECURE_ERASE := true
+TW_IGNORE_MISC_WIPE_DATA := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_FUSE_EXFAT := true
 BOARD_VNDK_RUNTIME_DISABLE := true
-PB_DISABLE_DEFAULT_TREBLE_COMP := true
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
 TW_INCLUDE_FUSE_NTFS := true
+
+# Treble
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
+TARGET_COPY_OUT_VENDOR := vendor
+#
+
 TW_FORCE_USE_BUSYBOX := true
 TW_INCLUDE_RESETPROP := true
