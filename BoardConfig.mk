@@ -60,7 +60,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff androidboot.selinux=permissive buildvariant=eng buildvariant=eng
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -68,7 +68,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := zImage
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/xiaomi/gemini
@@ -80,7 +80,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
 
-TARGET_HW_DISK_ENCRYPTION := true
+TW_INCLUDE_FBE := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 TW_INCLUDE_CRYPTO := true
 # Hack: prevent anti rollback
@@ -123,6 +123,8 @@ TW_INCLUDE_FUSE_NTFS := true
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
 TARGET_COPY_OUT_VENDOR := vendor
 #
-
+# Logcat
+TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
 TW_FORCE_USE_BUSYBOX := true
 TW_INCLUDE_RESETPROP := true
