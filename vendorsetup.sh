@@ -62,7 +62,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_VERSION="R11.1"
     export FOX_BUILD_TYPE="Stable"
 
-OF_TARGET_DEVICES="gemini"
 
 	# let's log what are the build VARs that we used
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
