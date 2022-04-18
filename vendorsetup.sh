@@ -14,20 +14,6 @@
 # See <http://www.gnu.org/licenses/>.
 #
 FDEVICE="gemini"
-
-fox_get_target_device() {
-local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
-   if [ -n "$chkdev" ]; then
-      FOX_BUILD_DEVICE="$FDEVICE"
-   else
-      chkdev=$(set | grep BASH_ARGV | grep $FDEVICE)
-      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
-   fi
-}
-if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
-   fox_get_target_device
-fi
-
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export MISSING_DEPENDENCIES=true
     export LC_ALL="C"
@@ -61,9 +47,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
    	export OF_MAINTAINER="unkl933"
     export FOX_VERSION="R11.1"
     export FOX_BUILD_TYPE="Stable"
-
-OF_TARGET_DEVICES="gemini"
-OF_USE_TWRP_SAR_DETECT="1"
 
 	# let's log what are the build VARs that we used
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
