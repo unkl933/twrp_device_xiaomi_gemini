@@ -63,6 +63,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_BUILD_TYPE="Stable"
 
 OF_TARGET_DEVICES="gemini"
+OF_USE_TWRP_SAR_DETECT="1"
 
 	# let's log what are the build VARs that we used
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
