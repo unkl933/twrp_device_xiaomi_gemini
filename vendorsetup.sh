@@ -48,7 +48,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_REPLACE_BUSYBOX_PS=1
 	export OF_SKIP_MULTIUSER_FOLDERS_BACKUP=1
 	export OF_FBE_METADATA_MOUNT_IGNORE=1
-	export FOX_DELETE_AROMAFM=1
     export OF_USE_SYSTEM_FINGERPRINT=1
     export OF_CHECK_OVERWRITE_ATTEMPTS=1
 
@@ -56,7 +55,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_MAINTAINER="unkl933"
     export FOX_VERSION="R11.1"
     export FOX_BUILD_TYPE="Stable"
-	export FOX_BUGGED_AOSP_ARB_WORKAROUND="1510672800"; # Tue Nov 14 15:20:00 GMT 2017
 	export FOX_USE_BASH_SHELL=1
 	export FOX_ASH_IS_BASH=1
 	export FOX_USE_NANO_EDITOR=1
@@ -76,9 +74,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 	# quick backup defaults
         export OF_QUICK_BACKUP_LIST="/boot;/data;/system_image;/vendor_image;"
-
-	# run a process after formatting data to work-around MTP issues
-	export OF_RUN_POST_FORMAT_PROCESS=1
 
 	export LC_ALL="C"
 
