@@ -19,19 +19,19 @@
 #
 FDEVICE="gemini"
 
-fox_get_target_device() {
-local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
-   if [ -n "$chkdev" ]; then
-      FOX_BUILD_DEVICE="$FDEVICE"
-   else
-      chkdev=$(set | grep BASH_ARGV | grep $FDEVICE)
-      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
-   fi
-}
+# fox_get_target_device() {
+# local chkdev=$(echo "$BASH_SOURCE" | grep $FDEVICE)
+#   if [ -n "$chkdev" ]; then
+#      FOX_BUILD_DEVICE="$FDEVICE"
+#   else
+#      chkdev=$(set | grep BASH_ARGV | grep $FDEVICE)
+#      [ -n "$chkdev" ] && FOX_BUILD_DEVICE="$FDEVICE"
+#   fi
+#}
 
-if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
+#if [ -z "$1" -a -z "$FOX_BUILD_DEVICE" ]; then
    fox_get_target_device
-fi
+#fi
 
 if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
@@ -68,8 +68,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_USE_XZ_UTILS=1
 	export OF_USE_GREEN_LED=1
 
-    OF_TARGET_DEVICES="gemini"
-    OF_USE_TWRP_SAR_DETECT="1"
+#    OF_TARGET_DEVICES="gemini"
+#    OF_USE_TWRP_SAR_DETECT="1"
 
 	# OTA for custom ROMs
         export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
