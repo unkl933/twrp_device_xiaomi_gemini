@@ -30,7 +30,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
         export OF_USE_NEW_MAGISKBOOT=1
         export OF_USE_MAGISKBOOT=1
         export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-        export OF_SCREEN_H=1920
         export TARGET_ARCH=arm64
 
 	# let's see what are our build VARs
