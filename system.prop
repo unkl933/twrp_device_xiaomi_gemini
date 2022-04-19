@@ -1,9 +1,4 @@
-ro.product.model=MI 5
-ro.product.brand=xiaomi
-ro.product.name=gemini
+#
 ro.product.device=gemini
-ro.product.manufacturer=xiaomi
 ro.build.product=gemini
-ro.hardware.keystore=msm8996
-persist.sys.usb.config=mtp,adb
-#ro.treble.enabled=true
+#
