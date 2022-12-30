@@ -14,8 +14,17 @@
 # limitations under the License.
 #
 
-# Assert
+# qcom decryption
+PRODUCT_PACKAGES_ENG += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
+
+# Custom ROM asserts
 TARGET_OTA_ASSERT_DEVICE := gemini
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # TWRP specific build flags
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -43,12 +52,12 @@ TW_INCLUDE_FUSE_NTFS := true
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
 BOARD_BUILD_DISABLED_VBMETAIMAGE := true
-PB_DONT_MOUNT_SYSTEM_AS_ROOT := true
 
 TW_INCLUDE_RESETPROP := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_Y_OFFSET := 91
-TW_H_OFFSET := -91
+TW_INCLUDE_REPACKTOOLS := true
+TW_OVERRIDE_SYSTEM_PROPS := \
+     "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+# TWRP Debug Flags
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 TARGET_USES_MKE2FS := true
@@ -56,3 +65,8 @@ TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := true
 TW_FRAMERATE := 60
 TW_INCLUDE_FASTBOOTD := true
+TW_NO_SCREEN_TIMEOUT := true
+
+# PBRP specific build flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
