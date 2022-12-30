@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_gemini.mk
+    $(LOCAL_DIR)/omni_gemini.mk
 
-COMMON_LUNCH_CHOICES := twrp_gemini-eng
+COMMON_LUNCH_CHOICES := omni_gemini-eng

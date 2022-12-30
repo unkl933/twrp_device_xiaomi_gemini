@@ -95,3 +95,6 @@ TW_NO_USB_STORAGE := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
+
+TW_Y_OFFSET := 91
+TW_H_OFFSET := -91
