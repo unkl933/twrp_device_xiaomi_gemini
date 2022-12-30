@@ -24,7 +24,12 @@
 # components.
 
 # For building with minimal manifest
+# For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
+SOONG_ALLOW_MISSING_DEPENDENCIES := true
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -56,9 +61,9 @@ TARGET_BOARD_PLATFORM := msm8996
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno530
 
 # Encryption
-BOARD_USES_QCOM_FBE_DECRYPTION := true
-TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE := true
+# BOARD_USES_QCOM_FBE_DECRYPTION := true
+# TW_INCLUDE_CRYPTO_FBE := true
+# TW_INCLUDE_FBE := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
@@ -96,5 +101,6 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_USE_TOOLBOX := true
 
-TW_Y_OFFSET := 91
-TW_H_OFFSET := -91
+# PBRP specific build flags
+PB_DISABLE_DEFAULT_DM_VERITY := true
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
