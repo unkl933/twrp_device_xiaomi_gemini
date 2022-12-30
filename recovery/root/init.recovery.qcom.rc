@@ -26,8 +26,10 @@
 #
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/platform/soc/624000l.ufshc
+    symlink /dev/block/platform/soc/624000l.ufshc /dev/block/bootdevice
+    mount_all /fstab.qcom
+    swapon_all /fstab.qcom
     export ANDROID_ROOT /system_root
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
