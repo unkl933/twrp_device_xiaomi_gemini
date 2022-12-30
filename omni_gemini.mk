@@ -20,11 +20,11 @@ PRODUCT_RELEASE_NAME := gemini
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := gemini
-PRODUCT_NAME := twrp_gemini
+PRODUCT_NAME := omni_gemini
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 5
 PRODUCT_MANUFACTURER := Xiaomi
