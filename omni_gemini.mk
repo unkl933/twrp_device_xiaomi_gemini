@@ -17,7 +17,14 @@
 # Release name
 PRODUCT_RELEASE_NAME := gemini
 
-$(call inherit-product, build/target/product/embedded.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+# Inherit from this product for devices that support only 64-bit apps using:
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
+# Inherit from gemini device
+$(call inherit-product, device/xiaomi/gemini/device.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/pb/config/common.mk)
