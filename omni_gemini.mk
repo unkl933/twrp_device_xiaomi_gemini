@@ -24,7 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
 
 # Inherit from gemini device
-$(call inherit-product, device/xiaomi/gemini/device.mk)
+#$(call inherit-product, device/xiaomi/gemini/device.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/pb/config/common.mk)

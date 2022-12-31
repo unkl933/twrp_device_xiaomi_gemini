@@ -100,4 +100,4 @@ on property:vendor.sys.listeners.registered=true
     start gatekeeper-1-0
     start servicemanager
     
-import /init.recovery.qcom_decrypt.rc
+# import /init.recovery.qcom_decrypt.rc
